@@ -6,8 +6,7 @@ Instead of sending an email when ZFS encounters an error, `zedhook` will POST JS
 
 ~~~
 {
-  "subject": "ZFS checksum error for backup on zedhost",
-  "message": "ZFS has detected a checksum error:&#13;eid: 5788&#13;class: checksum&#13;host: zedhost&#13;time: 2016-06-12 20:48:03-0500&#13;vtype: disk&#13;vpath: /dev/sdd1&#13;vguid: 0x1A7CE1031E023015&#13;cksum: 2472&#13;read: 0&#13;write: 0&#13;pool: backup"
+  "content": "ZFS checksum error for backup on zedhost ```ZFS has detected a checksum error:&#13;eid: 5788&#13;class: checksum&#13;host: zedhost&#13;time: 2016-06-12 20:48:03-0500&#13;vtype: disk&#13;vpath: /dev/sdd1&#13;vguid: 0x1A7CE1031E023015&#13;cksum: 2472&#13;read: 0&#13;write: 0&#13;pool: backup```"
 }
 ~~~
 
@@ -107,6 +106,8 @@ __Joel Kuzmarski__
 
 * <http://twitter.com/leoj3n>
 * <http://github.com/leoj3n>
+
+
 
 ## License
 
