@@ -61,9 +61,8 @@ json() { printf '%s' "$1" | sed 's/\\/\\\\/g;s/\//\\\//g;s/\t/\\t/g;s/"/\\\"/g' 
 # Arguments.
 json_header='Content-Type: application/json'
 json_data="$(
-  printf '{"%s":"%s","%s":"%s"}' \
-    'subject' "$(json "${opt_subject}")" \
-    'message' "$(json "${opt_message}")"
+  printf '{"%s":"%s"}' \
+    'content' "$(json "${opt_subject} \`\`\`${opt_message}\`\`\`")"
 )"
 
 # Post.
@@ -78,4 +77,3 @@ json_data="$(
 
 echo
 exit 0
-
