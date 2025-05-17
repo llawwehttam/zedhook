@@ -1,5 +1,7 @@
 # ZEDhook
 
+Now modified for Discord webhooks.
+
 `zedhook` is a script that can act as the "mail" program for the ZFS Event Daemon or [ZED](http://louwrentius.com/the-zfs-event-daemon-on-linux.html).
 
 Instead of sending an email when ZFS encounters an error, `zedhook` will POST JSON like this:
@@ -47,7 +49,7 @@ ZED_EMAIL_PROG="/usr/local/bin/zedhook"
 #   this should be protected with quotes to prevent word-splitting.
 # Email will only be sent if ZED_EMAIL_ADDR is defined.
 #
-ZED_EMAIL_OPTS="-s '@SUBJECT@' https://zapier.com/hooks/catch/<snip>/<snip>/"
+ZED_EMAIL_OPTS="-s '@SUBJECT@' https://discord.com/api/webhooks/<snip>/<snip>/"
 
 ##
 # Minimum number of seconds between notifications for a similar event.
@@ -59,7 +61,7 @@ You'll notice that I've set the `ZED_EMAIL_ADDR` to a dummy value so ZED will ru
 
 I've set the `ZED_EMAIL_PROG` to `/usr/local/bin/zedhook`, which means I've downloaded the `zedhook` script to `/usr/local/bin/`. You can put the `zedhook` script anywhere on your system, as long as you tell ZED about the location by setting `ZED_EMAIL_PROG` accordingly.
 
-Finally, `ZED_EMAIL_OPTS` has had the address part set to a [Zapier](https://zapier.com/) webhook, but you can have yours POST to any endpoint ready to consume the JSON.
+Finally, `ZED_EMAIL_OPTS` has had the address part set to a [Discord](https://discord.com/) webhook, but you can have yours POST to any endpoint ready to consume the JSON.
 
 ## Local logging
 
@@ -95,7 +97,7 @@ This is the exact same information sent by POST as JSON to your endpoint, but al
 It can accept arguments like:
 
 ~~~
-zedhook -s "Some kind of message" https://zapier.com/hooks/catch/<snip>/<snip>/ < somelogfile
+zedhook -s "Some kind of message" https://discord.com/api/webhooks/<snip>/<snip>/ < somelogfile
 ~~~
 
 So, perhaps it could be useful for replacing the mail program in other simple log programs.
@@ -107,7 +109,9 @@ __Joel Kuzmarski__
 * <http://twitter.com/leoj3n>
 * <http://github.com/leoj3n>
 
+__Matt Wall__
 
+* <https://github.com/llawwehttam>
 
 ## License
 
